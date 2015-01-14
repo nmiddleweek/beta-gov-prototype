@@ -38,3 +38,7 @@
     background-image: url("../images/icons/icon-pointer-2x.png");
   }
 }
+
+.button-secondary {
+  @include button($grey-3);
+}

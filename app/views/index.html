@@ -3,11 +3,579 @@
 {{$pageTitle}}Index{{/pageTitle}}
 
 {{$content}}
+<script>
+
+    var stringToParse = "You have a doctor's appointment on 2012/03/13 16:00.  Please show up on time.";
+    var dateString = stringToParse.match("/\d{4}\/\d{2}\/\d{2}\s+\d{2}:\d{2}/");
+    var dt = new Date(dateString);
+    console.log(dt); //prints "Tue March 13 16:00:00 EDT 2012"
+
+</script>
+
 <main id="content" role="main">
-  <header class="page-header">
-    <h1></h1>
-  </header>
+    <article>
+        <header class="grid-row page-header">
+
+            <div class="column-half page-header-titles">
+                <h1 class="heading-large report-title">2014 - 2015 report
+                    <div class="heading-large client-name">James Smith</div>
+                </h1>
+            </div>
+            <div class="column-half page-header-meta-data">
+                <div class="report-meta-data">
+                    <span class="report-meta__label">Reporting period:</span>
+                    <span class="report-meta report-meta__data">22 December 2014 - 21 December 2015</span>
+                </div>
+                <div class="report-meta-data">
+                    <span class="report-meta report-meta__label">Due date:</span>
+                    <span class="report-meta report-meta__data">22 December 2015</span>
+                </div>
+            </div>
+
+        </header>
+        <div class="js-tabs nav-tabs">
+            <ul class="tabs-nav">
+                <li class="active"><a id="tab-overview">Overview</a></li>
+                <li><a id="tab-contacts">Contacts</a></li>
+                <li><a id="tab-decisions">Decisions</a></li>
+                <li><a id="tab-accounts">Accounts</a></li>
+                <li><a id="tab-assets">Assets</a></li>
+            </ul>
+        </div>
+
+        <div class="js-tab-content tab-content tabs-body">
+
+            <div class="js-tab-pane tab-pane tabs-panel tabs-panel-selected" id="tab-overview-panel"
+                 role="tabpanel" aria-hidden="false" aria-expanded="true" aria-labelledby="tab-overview-panel">
+
+                <h2>Overview</h2>
+
+                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
+                    elit id tortor.</p>
+
+                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
+                    elit id tortor.</p>
+
+                <h3>Contacts</h3>
+
+                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
+                    elit id tortor.</p>
+
+                <h3>Decisions</h3>
+
+                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
+                    elit id tortor.</p>
+
+                <h3>Accounts</h3>
+
+                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
+                    elit id tortor.</p>
+
+                <h3>Assets</h3>
+
+                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
+                    elit id tortor.</p>
+
+                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
+                    elit id tortor.</p>
+
+                <h2>Help topics</h2>
+
+                <ul>
+                    <li>Topic 1</li>
+                    <li>Topic 2</li>
+                    <li>Topic 3</li>
+                    <li>Topic 4</li>
+                </ul>
+
+            </div>
+
+            <div class="js-tab-pane tab-pane tabs-panel" id="tab-contacts-panel"
+                 role="tabpanel" aria-hidden="false" aria-expanded="true" aria-labelledby="tab-contacts-panel">
+
+                <h2>Contacts</h2>
+
+
+            </div>
+
+            <div class="js-tab-pane tab-pane tabs-panel" id="tab-decisions-panel"
+                 role="tabpanel" aria-hidden="false" aria-expanded="true" aria-labelledby="tab-decisions-panel">
+
+                <h2>Decisions</h2>
+
+
+            </div>
+
+            <div class="js-tab-pane tab-pane tabs-panel" id="tab-accounts-panel"
+                 role="tabpanel" aria-hidden="false" aria-expanded="true" aria-labelledby="tab-accounts-panel">
+
+                <div class="accounts-panel accounts-panel-input accounts-panel-default-header">
+                    <h2>Accounts</h2>
+
+                    <p>Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula
+                        urna in
+                        dolor. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Praesent congue erat at
+                        massa.</p>
+
+                </div>
+
+                <div class="accounts-panel accounts-panel-add">
+                    <input class="button button-secondary" name="commit" type="button" value="Add an account">
+
+                </div>
+
+                <form accept-charset="UTF-8" action="" autocomplete="off"
+                      class="form validation accounts-panel accounts-panel-input accounts-panel-input-1"
+                      id="new-account"
+                      method="post">
+                </form>
+
+                <div class="accounts-panel accounts-panel-input accounts-panel-input-2">
+                </div>
+
+                <div class="accounts-panel accounts-panel-listing">
+
+                    <div>
+                        <table class="accounts-table-listing">
+                        </table>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="js-tab-pane tab-pane tabs-panel" id="tab-assets-panel"
+                 role="tabpanel" aria-hidden="false" aria-expanded="true" aria-labelledby="tab-assets-panel">
+
+                <h2>Assets</h2>
+
+
+            </div>
+
+        </div>
+
+    </article>
+
+
 </main>
+
+<script id="accounts-table-list-item" type="text/x-handlebars-template">
+    <tbody>
+    <%#records%>
+    <tr data-uuid="<%uuid%>">
+        <td><a href="#open-account-details" class="js-open-account"><%name%></a></td>
+        <td>****<%number%></td>
+        <td><a href="#edit-account-details" class="js-edit-account">Edit account details</a></td>
+    </tr>
+    <%/records%>
+    </tbody>
+</script>
+
+<script id="accounts-panel-input-2__transactions-template" type="text/x-handlebars-template">
+    <%#records%>
+    <tr class="" data-uuid="<%uuid%>">
+        <td><%date%></td>
+        <td><%category%></td>
+        <td><%moneyIn%></td>
+        <td><%moneyOut%></td>
+        <td><a href="#edit-transaction" class="js-edit-transaction">Edit</a></td>
+    </tr>
+    <%/records%>
+</script>
+
+<script id="accounts-panel-input-2__transactions-edit-template" type="text/x-handlebars-template">
+    <div class="accounts-panel accounts-panel-input-2__entry-form">
+        <table class="nolines">
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <fieldset>
+                            <legend class="form-label">Date</legend>
+                            <span class="validation-message"></span>
+
+                            <div class="form-date">
+
+                                <div class="form-group form-group-day">
+                                    <label for="edit-transaction_date-day" class="visuallyhidden">day</label>
+                                    <input class="form-control" id="edit-transaction_date-day" type="number"
+                                           pattern="[0-9]*" min="1" max="31" value="<%dateDay%>">
+                                </div>
+
+                                <div class="form-group form-group-month">
+                                    <label for="edit-transaction_date-month" class="visuallyhidden">month</label>
+                                    <input class="form-control" id="edit-transaction_date-month" type="number"
+                                           pattern="[0-9]*" min="1" max="12" value="<%dateMonth%>">
+                                </div>
+
+                                <div class="form-group form-group-year">
+                                    <label for="edit-transaction_date-year" class="visuallyhidden">year</label>
+                                    <input class="form-control" id="edit-transaction_date-year" type="number" size="4"
+                                           pattern="[0-9]*" min="2000" max="2015" value="<%dateYear%>">
+                                </div>
+
+                            </div>
+                        </fieldset>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="edit-transaction_type" class="form-label">Type</label>
+                        <select id="edit-transaction_type">
+                            <option value="0">please select</option>
+                            <option value="1">Income</option>
+                            <option value="2">Benefit</option>
+                            <option value="3">Expenditure</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="edit-transaction_category" class="form-label">Category</label>
+                        <select id="edit-transaction_category">
+                            <option value="0">please select</option>
+                            <option value="1">Occupational pension</option>
+                            <option value="2">Account interest</option>
+                            <option value="3">Income from investments/property</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div class="form-group form-group--addon">
+                        <label for="edit-transaction_amount" class="form-label">Amount
+                            <span class="validation-message"></span>
+                        </label>
+                        <span class="input-group-addon">£</span>
+                        <input id="edit-transaction_amount" name="edit-transaction_amount" type="text"
+                               value="<%amount%>">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <div class="actions">
+                        <div class="primary-actions">
+                            <input class="js-save-transaction button button-primary" name="commit" type="button"
+                                   value="Save">
+                            <input class="js-cancel-transaction button button-text" name="commit" type="button"
+                                   value="Cancel">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+</script>
+
+<script id="accounts-panel-input-2-template" type="text/x-handlebars-template">
+
+    <div class="accounts-panel-input-2__breadcrumb">
+        <a href="#" class="js-breadcrumb-accounts">Accounts</a> > <%name%>
+    </div>
+
+    <div class="grid-row accounts-panel-input-2__header">
+        <div class="column-half">
+            <h2 class="accounts-panel-input-2__title"><%name%></h2>
+        </div>
+
+        <div class="column-half">
+            <div class="report-meta-data accounts-panel-input-2__details">
+                <span class="report-meta__label">Account no.</span>
+                <span class="report-meta__data">****<%number%></span>
+            </div>
+            <div class="report-meta-data accounts-panel-input-2__details">
+                <span class="report-meta__label">Sort code</span>
+                <span class="report-meta__data"><%sortCode%></span>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div class="accounts-panel-input-2__opening-balance">
+        Opening Balance
+    </div>
+    <h3 class="form-title accounts-panel-input-2__money-title">Money in and money out</h3>
+
+    <p class="accounts-panel-input-2__money-desc">Phasellus blandit leo ut odio. Nulla facilisi. Aliquam lorem ante,
+        dapibus in, viverra quis, feugiat a, tellus. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. Praesent adipiscing.</p>
+
+    <div class="accounts-panel-input-2__entry-form">
+        <table class="nolines">
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <fieldset>
+                            <legend class="form-label">Date</legend>
+                            <span class="validation-message"></span>
+
+                            <div class="form-date">
+
+                                <div class="form-group form-group-day">
+                                    <label for="transaction_date-day" class="visuallyhidden">day</label>
+                                    <input class="form-control" id="transaction_date-day" type="number"
+                                           pattern="[0-9]*" min="1" max="31" value="01">
+                                </div>
+
+                                <div class="form-group form-group-month">
+                                    <label for="transaction_date-month" class="visuallyhidden">month</label>
+                                    <input class="form-control" id="transaction_date-month" type="number"
+                                           pattern="[0-9]*" min="1" max="12" value="01">
+                                </div>
+
+                                <div class="form-group form-group-year">
+                                    <label for="transaction_date-year" class="visuallyhidden">year</label>
+                                    <input class="form-control" id="transaction_date-year" type="number" size="4"
+                                           pattern="[0-9]*" min="2000" max="2015" value="2015">
+                                </div>
+
+                            </div>
+                        </fieldset>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="transaction_type" class="form-label">Type</label>
+                        <select id="transaction_type">
+                            <option value="0">please select</option>
+                            <option value="1" selected>Income</option>
+                            <option value="2">Benefit</option>
+                            <option value="3">Expenditure</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label for="transaction_category" class="form-label">Category</label>
+                        <select id="transaction_category">
+                            <option value="0">please select</option>
+                            <option value="1" selected>Occupational pension</option>
+                            <option value="2">Account interest</option>
+                            <option value="3">Income from investments/property</option>
+                        </select></div>
+                </td>
+                <td>
+                    <div class="form-group form-group--addon">
+                        <label for="transaction_amount" class="form-label">Amount
+                            <span class="validation-message"></span>
+                        </label>
+                        <span class="input-group-addon">£</span>
+                        <input id="transaction_amount" name="transaction_amount" type="text" value="150.00">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <div class="actions">
+                        <div class="primary-actions">
+                            <input class="js-add-transaction button button-primary" name="commit" type="button"
+                                   value="Add">
+                            <input class="js-clear-transaction button button-text" name="commit" type="button"
+                                   value="Clear">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="accounts-panel-input-2__current-balance">
+        Current balance <span class="js-current-balance"></span>
+    </div>
+
+    <table class="nolines accounts-panel-input-2__transactions">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Money in</th>
+            <th>Money out</th>
+            <th></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr class="example-data">
+            <td>DD/MM/YYYY</td>
+            <td>e.g. Occupational pension</td>
+            <td>£---.--</td>
+            <td>£---.--</td>
+            <td>Edit</td>
+        </tr>
+        <tr class="example-data">
+            <td>DD/MM/YYYY</td>
+            <td>e.g. Accomodation costs</td>
+            <td>£---.--</td>
+            <td>£---.--</td>
+            <td>Edit</td>
+        </tr>
+        <tr class="example-data">
+            <td>DD/MM/YYYY</td>
+            <td>e.g. Investments</td>
+            <td>£---.--</td>
+            <td>£---.--</td>
+            <td>Edit</td>
+        </tr>
+
+        </tbody>
+    </table>
+</script>
+
+<script id="accounts-panel-input-1-template" type="text/x-handlebars-template">
+    <h3 class="form-title"><span class="js-add-edit-label">Add</span> your account details</h3>
+    <fieldset>
+        <legend class="visuallyhidden">account details</legend>
+        <div class="form-group">
+            <label for="account_bank_name" class="form-label">Please enter the Bank/Building Society name
+                <span class="validation-message"></span>
+            </label>
+            <input id="account_bank_name" name="account_bank_name" type="text" class="form-control"
+                   value="<%name%>">
+        </div>
+        <div class="form-group">
+
+            <fieldset>
+                <legend class="form-label">Last four digits of the account number</legend>
+                <span class="validation-message"></span>
+
+                <div class="form-date">
+                    <div class="form-group placeholder">
+                        .
+                    </div>
+                    <div class="form-group placeholder">
+                        .
+                    </div>
+                    <div class="form-group placeholder">
+                        .
+                    </div>
+                    <div class="form-group placeholder">
+                        .
+                    </div>
+
+                    <div class="form-group">
+                        <label for="account_bank_num-5th" class="visuallyhidden">5th number</label>
+                        <input class="form-control" id="account_bank_num-5th" name="account_bank_num-5th"
+                               type="number" pattern="[0-9]*" min="0" max="9" value="<%number5%>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="account_bank_num-6th" class="visuallyhidden">6th number</label>
+                        <input class="form-control" id="account_bank_num-6th" name="account_bank_num-6th"
+                               type="number" pattern="[0-9]*" min="0" max="9" value="<%number6%>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="account_bank_num-7th" class="visuallyhidden">7th number</label>
+                        <input class="form-control" id="account_bank_num-7th" name="account_bank_num-7th"
+                               type="number" pattern="[0-9]*" min="0" max="9" value="<%number7%>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="account_bank_num-8th" class="visuallyhidden">8th number</label>
+                        <input class="form-control" id="account_bank_num-8th" name="account_bank_num-8th"
+                               type="number" pattern="[0-9]*" min="0" max="9" value="<%number8%>">
+                    </div>
+                </div>
+
+            </fieldset>
+
+        </div>
+
+        <h3 class="form-title">Add the opening balance on your account</h3>
+
+        <div class="form-group">
+
+            <fieldset>
+                <legend class="form-label">Branch sort code</legend>
+                <span class="validation-message"></span>
+
+                <div class="form-date">
+
+                    <div class="form-group">
+                        <label for="account_bank_sort-code-1" class="visuallyhidden">sort code 1</label>
+                        <input class="form-control" id="account_bank_sort-code-1" name="account_bank_sort-code-1"
+                               type="number" pattern="[0-9]*" min="0" max="9" value="<%sortCode1%>">
+                    </div>
+
+                    <div class="form-group placeholder">
+                        -
+                    </div>
+
+                    <div class="form-group">
+                        <label for="account_bank_sort-code-2" class="visuallyhidden">sort code 2</label>
+                        <input class="form-control" id="account_bank_sort-code-2" name="account_bank_sort-code-2"
+                               type="number" pattern="[0-9]*" min="0" max="9" value="<%sortCode2%>">
+                    </div>
+
+                    <div class="form-group placeholder">
+                        -
+                    </div>
+
+                    <div class="form-group">
+                        <label for="account_bank_sort-code-3" class="visuallyhidden">sort code 3</label>
+                        <input class="form-control" id="account_bank_sort-code-3" name="account_bank_sort-code-3"
+                               type="number" pattern="[0-9]*" min="0" max="9" value="<%sortCode3%>">
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="form-group">
+            <fieldset>
+                <legend class="form-label">Start date</legend>
+                <span class="validation-message"></span>
+
+                <div class="form-date">
+
+                    <div class="form-group form-group-day">
+                        <label for="account_bank_date-day" class="visuallyhidden">day</label>
+                        <input class="form-control" id="account_bank_date-day" type="number" pattern="[0-9]*"
+                               min="0" max="9" value="<%dateDay%>">
+                    </div>
+
+                    <div class="form-group form-group-month">
+                        <label for="account_bank_date-month" class="visuallyhidden">month</label>
+                        <input class="form-control" id="account_bank_date-month" type="number" pattern="[0-9]*"
+                               min="0" max="9" value="<%dateMonth%>">
+                    </div>
+
+                    <div class="form-group form-group-year">
+                        <label for="account_bank_date-year" class="visuallyhidden">year</label>
+                        <input class="form-control" id="account_bank_date-year" type="number" pattern="[0-9]*"
+                               min="0" max="9" value="<%dateYear%>">
+                    </div>
+
+                </div>
+            </fieldset>
+        </div>
+
+        <div class="form-group form-group--addon">
+            <label for="prisoner_number" class="form-label">Total amount
+                <span class="validation-message"></span>
+            </label>
+            <span class="input-group-addon">£</span>
+            <input id="account_bank_total" name="account_bank_total" type="text" value="<%openingBalance%>">
+        </div>
+
+    </fieldset>
+    <div class="actions">
+        <div class="primary-actions">
+            <input class="js-save-account button button-primary" name="commit" type="button"
+                   value="Continue">
+        </div>
+    </div>
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="/public/javascripts/mustache.js"></script>
+
+<script type="text/javascript" src="/public/javascripts/prototype.js"></script>
+
 {{/content}}
 
 {{/layout}}

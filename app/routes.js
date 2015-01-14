@@ -19,5 +19,11 @@ module.exports = {
       res.render('examples/alpha/alpha', {'assetPath' : assetPath });    
     });
 
+
+
+      /* Prototype pages */
+
+
+
   }
 };

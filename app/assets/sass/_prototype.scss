@@ -1,0 +1,172 @@
+// Tabs
+@import "tabs";
+
+.accounts-panel {
+
+  display: none;
+
+  &.open {
+    display: block;
+  }
+
+  &.accounts-panel-input-1 {
+    border-left: 3px solid $grey-2;
+    padding-left: 10px
+  }
+
+}
+
+.accounts-table-listing {
+
+  & .template {
+    display: none;
+  }
+}
+
+.form-group {
+  .input-group-addon {
+    box-sizing: border-box;
+    position: absolute;
+    background: $grey-3;
+    font-size: 19px;
+    padding: 5px 8px 2px;
+    border: 1px solid $grey-2;
+  }
+
+  &.inline {
+    display: inline-block;
+    width: auto;
+  }
+
+  &.form-group--addon {
+    input {
+      padding-left: 2em;
+    }
+  }
+}
+
+.button-text {
+  @include button(#fff);
+  font-size: 19px;
+  box-shadow: none;
+  text-decoration: underline;
+  background: transparent;
+
+  &,
+  &:link,
+  &:hover,
+  &:focus,
+  &:visited {
+    color: $govuk-blue;
+  }
+}
+
+table.nolines {
+  td {
+    border: 0;
+  }
+}
+
+tr.example-data {
+  td {
+    color: $grey-3;
+  }
+}
+
+.accounts-panel-input-2__entry-form {
+  background-color: $grey-3;
+  padding-left: 15px;
+
+  .form-label {
+    //@include copy-19();
+    margin-bottom: 30px;
+  }
+}
+
+.accounts-panel-input-2__current-balance {
+  @include bold-24();
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.accounts-panel-input-2__details {
+  //right: 0;
+  //text-align: right;
+}
+
+.accounts-panel-input-2__opening-balance {
+  @include core-24();
+  border-top: 1px solid $grey-2;
+  border-bottom: 1px solid $grey-2;
+  padding: 10px;
+  color: #005EA5;
+}
+
+#content {
+
+  & .page-header {
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+
+    & .report-title {
+      font-weight: normal;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    & .client-name {
+      @include bold-48();
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    & .page-header-meta-data {
+      margin-top: 10px;
+    }
+
+    & .page-header-titles {
+      @include bold-48();
+    }
+
+  }
+}
+
+.report-meta-data {
+  @include copy-16();
+}
+
+.report-meta__label {
+  color: $grey-1;
+  margin-right: 10px;
+}
+
+.report-meta__data {
+  color: $black;
+  font-weight: 700;
+}
+
+.tab-pane {
+  h2 {
+    @include bold-27();
+  }
+
+  p {
+    @include copy-19();
+  }
+}
+
+.form-title {
+  @include bold-24();
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.accounts-panel-input-2__breadcrumb {
+  @include core-24();
+}
+
+.accounts-panel-input-2__header {
+  margin-top: 40px;
+}

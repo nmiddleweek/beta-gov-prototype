@@ -29,7 +29,7 @@
     position: absolute;
     background: $grey-3;
     font-size: 19px;
-    padding: 5px 8px 2px;
+    padding: 3px 8px 2px;
     border: 1px solid $grey-2;
   }
 
@@ -116,17 +116,34 @@ tr.example-data {
   padding: 10px;
   color: #005EA5;
 
-  summary {
-    margin-bottom: 0px;
-  }
-
   details {
+
+    summary {
+      margin-bottom: 0px;
+      display: block;
+
+      &::-webkit-details-marker {
+        float: right;
+        margin-top: 10px;
+        -ms-transform: rotate(90deg); /* IE 9 */
+        -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+        transform: rotate(90deg);
+      }
+    }
 
     .content {
       display: none;
     }
 
     &[open] {
+
+      summary {
+        &::-webkit-details-marker {
+          -ms-transform: rotate(180deg); /* IE 9 */
+          -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+          transform: rotate(180deg);
+        }
+      }
 
       .content {
         display: block;

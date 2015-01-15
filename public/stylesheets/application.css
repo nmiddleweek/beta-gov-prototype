@@ -1203,7 +1203,7 @@ ul, ol {
   position: absolute;
   background: #dee0e2;
   font-size: 19px;
-  padding: 5px 8px 2px;
+  padding: 3px 8px 2px;
   border: 1px solid #bfc1c3; }
 .form-group.inline {
   display: inline-block;
@@ -1326,10 +1326,25 @@ tr.example-data td {
     .accounts-panel-input-2__opening-balance {
       font-size: 18px;
       line-height: 1.2; } }
-  .accounts-panel-input-2__opening-balance summary {
-    margin-bottom: 0px; }
+  .accounts-panel-input-2__opening-balance details summary {
+    margin-bottom: 0px;
+    display: block; }
+    .accounts-panel-input-2__opening-balance details summary::-webkit-details-marker {
+      float: right;
+      margin-top: 10px;
+      -ms-transform: rotate(90deg);
+      /* IE 9 */
+      -webkit-transform: rotate(90deg);
+      /* Chrome, Safari, Opera */
+      transform: rotate(90deg); }
   .accounts-panel-input-2__opening-balance details .content {
     display: none; }
+  .accounts-panel-input-2__opening-balance details[open] summary::-webkit-details-marker {
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    -webkit-transform: rotate(180deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(180deg); }
   .accounts-panel-input-2__opening-balance details[open] .content {
     display: block; }
 

@@ -37,8 +37,15 @@
             'accounts': [],
             'types': [
                 {
+                    'name': 'Please select',
+                    'categories': [
+                        'Please select'
+                    ]
+                },
+                {
                     'name': 'Benefits',
                     'categories': [
+                        'Please select',
                         'Disability Living Allowance',
                         'Attendance Allowance',
                         'Employment Support Allowance',
@@ -52,6 +59,7 @@
                 {
                     'name': 'Income',
                     'categories': [
+                        'Please select',
                         'Occupational pension(s)',
                         'Account interest',
                         'Income from investments/property',
@@ -63,6 +71,7 @@
                 {
                     'name': 'Expenditure',
                     'categories': [
+                        'Please select',
                         'Accommodation costs (e.g. rent, mortgage)',
                         'Care fees/Local Authority charges for care',
                         'Household bills (e.g. water, gas, electric, TV, Phone, Internet',
@@ -175,6 +184,9 @@
 
             $('.accounts-panel-input-1').html('');
             $('.accounts-panel-input-2').html(output).addClass('open');
+
+            $('#transaction_type').html(buildTypes());
+            $('#transaction_category').html(buildCategories(0));
 
             if ((account.transactions) && (account.transactions.length > 0)) {
                 refreshTransactionsList();
@@ -473,8 +485,29 @@
 
             $('.js-current-balance').html('£' + balance.toFixed(2));
 
-        };
+        },
+        buildTypes = function buildTypes() {
+            var optionHTML = '',
+                loop;
 
+            for (loop = 0; loop < model.types.length; loop++) {
+                optionHTML += '<option value="' + loop + '">' + model.types[loop].name + '</option>>';
+            }
+
+            return optionHTML;
+
+        },
+        buildCategories = function buildCategories(typeElem) {
+            var optionHTML = '',
+                loop,
+                type = model.types[typeElem];
+
+            for (loop = 0; loop < type.categories.length; loop++) {
+                optionHTML += '<option value="' + loop + '">' + type.categories[loop] + '</option>>';
+            }
+
+            return optionHTML;
+        };
 })
 ();
 

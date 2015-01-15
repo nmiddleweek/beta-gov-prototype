@@ -74,7 +74,7 @@
                         'Please select',
                         'Accommodation costs (e.g. rent, mortgage)',
                         'Care fees/Local Authority charges for care',
-                        'Household bills (e.g. water, gas, electric, TV, Phone, Internet',
+                        'Household bills (e.g. water, gas, electric, TV, Phone, Internet)',
                         'Tax',
                         'Insurance',
                         'Office of the Public Guardian fees',
@@ -287,7 +287,7 @@
                 }
             }
 
-            $('#edit-transaction_category').html(buildCategories(   $('#edit-transaction_type option:selected').val()   ));
+            $('#edit-transaction_category').html(buildCategories($('#edit-transaction_type option:selected').val()));
             for (loop = 0; loop < $('#edit-transaction_category')[0].options.length; loop++) {
                 if ($('#edit-transaction_category option').eq(loop).val() === transaction.categoryValue) {
                     $('#edit-transaction_category option').eq(loop).attr('selected', 'selected')
@@ -485,7 +485,7 @@
 
         },
         updateCurrentBalance = function updateCurrentBalance() {
-            var balance = parseFloat(account.openingBalance),
+            var balance = (account.openingBalance) ? parseFloat(account.openingBalance) : 0.00,
                 loop;
 
             if (account.transactions) {

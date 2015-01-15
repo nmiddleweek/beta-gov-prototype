@@ -170,3 +170,11 @@ tr.example-data {
 .accounts-panel-input-2__header {
   margin-top: 40px;
 }
+
+.accounts-panel-input-2__transactions {
+
+  & th {
+    font-weight: normal;
+  }
+
+}

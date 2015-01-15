@@ -1,7 +1,6 @@
 .sass-cache
 .DS_Store
 .start.pid
-public
 govuk_modules
 *.iml
 .idea

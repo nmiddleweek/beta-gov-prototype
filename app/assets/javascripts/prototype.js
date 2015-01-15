@@ -104,18 +104,18 @@
                 var template = document.getElementById('accounts-panel-input-1-template').innerHTML.replace(/<%/g, '{{').replace(/%>/g, '}}'),
                     output = Mustache.render(template,
                         {
-                            'name': 'Nationwidth',
-                            'number5': '1',
-                            'number6': '2',
-                            'number7': '3',
-                            'number8': '4',
-                            'sortCode1': '01',
-                            'sortCode2': '02',
-                            'sortCode3': '03',
-                            'dateDay': '29',
-                            'dateMonth': '11',
-                            'dateYear': '2014',
-                            'openingBalance': '2500.00'
+                            'name': '',
+                            'number5': '',
+                            'number6': '',
+                            'number7': '',
+                            'number8': '',
+                            'sortCode1': '',
+                            'sortCode2': '',
+                            'sortCode3': '',
+                            'dateDay': '',
+                            'dateMonth': '',
+                            'dateYear': '',
+                            'openingBalance': ''
 
                         });
                 $('.accounts-panel-input-1').html(output);
@@ -353,18 +353,18 @@
             var template = document.getElementById('accounts-panel-input-1-template').innerHTML.replace(/<%/g, '{{').replace(/%>/g, '}}'),
                 output = Mustache.render(template,
                     {
-                        'name': 'NatEast',
-                        'number5': '9',
-                        'number6': '8',
-                        'number7': '7',
-                        'number8': '6',
-                        'sortCode1': '33',
-                        'sortCode2': '22',
-                        'sortCode3': '11',
-                        'dateDay': '05',
-                        'dateMonth': '01',
-                        'dateYear': '2015',
-                        'openingBalance': '9999.00'
+                        'name': '',
+                        'number5': '',
+                        'number6': '',
+                        'number7': '',
+                        'number8': '',
+                        'sortCode1': '',
+                        'sortCode2': '',
+                        'sortCode3': '',
+                        'dateDay': '',
+                        'dateMonth': '',
+                        'dateYear': '',
+                        'openingBalance': ''
                     });
 
             $('.accounts-panel-input-1').html(output);

@@ -38,14 +38,49 @@
             'types': [
                 {
                     'name': 'Benefits',
-                    'categories': []
+                    'categories': [
+                        'Disability Living Allowance',
+                        'Attendance Allowance',
+                        'Employment Support Allowance',
+                        'Incapacity Benefit',
+                        'Severe Disablement Allowance',
+                        'Income Support/Pension Credit',
+                        'Housing Benefit',
+                        'State Pension'
+                    ]
                 },
                 {
-                    'name': 'Benefits',
-                    'categories': []},
+                    'name': 'Income',
+                    'categories': [
+                        'Occupational pension(s)',
+                        'Account interest',
+                        'Income from investments/property',
+                        'Sale of investments/property/assets',
+                        'Transfers from other accounts/Court Funds',
+                        'Tax rebates/other refunds',
+                        'Bequests (e.g. inheritance, gifts received'
+                    ]},
                 {
-                    'name': 'Benefits',
-                    'categories': []}
+                    'name': 'Expenditure',
+                    'categories': [
+                        'Accommodation costs (e.g. rent, mortgage)',
+                        'Care fees/Local Authority charges for care',
+                        'Household bills (e.g. water, gas, electric, TV, Phone, Internet',
+                        'Tax',
+                        'Insurance',
+                        'Office of the Public Guardian fees',
+                        'Deputy’s security bond premium',
+                        'Capital expenditure/major purchases',
+                        'Property maintenance/improvement',
+                        'Investments purchased',
+                        'Transfers to other accounts/ Court Funds',
+                        'Holidays/excursions',
+                        'Professional fees',
+                        'Deputy’s expenses',
+                        'Spending money provided for Client',
+                        'Day-to-day living costs (e.g. Food, Toiletries, Sundries)',
+                        'Gifts'
+                    ]}
             ]
         },
         account = {},

@@ -1287,8 +1287,14 @@ tr.example-data td {
 .accounts-panel-input-2__entry-form {
   background-color: #dee0e2;
   padding-left: 15px; }
+  .accounts-panel-input-2__entry-form h3 {
+    margin-top: 25px;
+    margin-bottom: 25px; }
   .accounts-panel-input-2__entry-form .form-label {
     margin-bottom: 30px; }
+  .accounts-panel-edit-transaction .accounts-panel-input-2__entry-form {
+    background-color: inherit;
+    border-left: 3px solid #bfc1c3; }
 
 .accounts-panel-input-2__current-balance {
   font-family: "nta", Arial, sans-serif;
@@ -1297,11 +1303,13 @@ tr.example-data td {
   font-weight: 700;
   text-transform: none;
   margin-top: 40px;
-  margin-bottom: 50px; }
+  margin-bottom: 40px; }
   @media (max-width: 640px) {
     .accounts-panel-input-2__current-balance {
       font-size: 18px;
       line-height: 1.2; } }
+  .accounts-panel-input-2__current-balance span {
+    float: right; }
 
 
 .accounts-panel-input-2__opening-balance {
@@ -1318,6 +1326,12 @@ tr.example-data td {
     .accounts-panel-input-2__opening-balance {
       font-size: 18px;
       line-height: 1.2; } }
+  .accounts-panel-input-2__opening-balance summary {
+    margin-bottom: 0px; }
+  .accounts-panel-input-2__opening-balance details .content {
+    display: none; }
+  .accounts-panel-input-2__opening-balance details[open] .content {
+    display: block; }
 
 #content .page-header {
   margin-top: 20px;
@@ -1394,7 +1408,8 @@ tr.example-data td {
   font-weight: 400;
   text-transform: none;
   padding-top: 2px;
-  padding-bottom: 8px; }
+  padding-bottom: 8px;
+  width: 65%; }
   @media (max-width: 640px) {
     .tab-pane p {
       font-size: 16px;

@@ -77,16 +77,31 @@ tr.example-data {
   background-color: $grey-3;
   padding-left: 15px;
 
+  h3 {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
   .form-label {
     //@include copy-19();
     margin-bottom: 30px;
   }
+
+  .accounts-panel-edit-transaction & {
+    background-color: inherit;
+    border-left: 3px solid $grey-2;
+  }
+
 }
 
 .accounts-panel-input-2__current-balance {
   @include bold-24();
   margin-top: 40px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+
+  span {
+    float: right;
+  }
 }
 
 .accounts-panel-input-2__details {
@@ -100,6 +115,27 @@ tr.example-data {
   border-bottom: 1px solid $grey-2;
   padding: 10px;
   color: #005EA5;
+
+  summary {
+    margin-bottom: 0px;
+  }
+
+  details {
+
+    .content {
+      display: none;
+    }
+
+    &[open] {
+
+      .content {
+        display: block;
+      }
+
+    }
+
+  }
+
 }
 
 #content {
@@ -154,6 +190,7 @@ tr.example-data {
 
   p {
     @include copy-19();
+    width: 65%;
   }
 }
 

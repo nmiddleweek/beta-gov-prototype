@@ -28,17 +28,25 @@
 
     });
 
-    $('.js-breadcrumb-accounts').click(function () {
-        initTabAccounts();
-    });
-
     $('.accounts-panel-add .button').click(function (evt) {
         openAccountInput();
         $('.accounts-panel-add').removeClass('open');
     });
 
     var model = {
-            'accounts': []
+            'accounts': [],
+            'types': [
+                {
+                    'name': 'Benefits',
+                    'categories': []
+                },
+                {
+                    'name': 'Benefits',
+                    'categories': []},
+                {
+                    'name': 'Benefits',
+                    'categories': []}
+            ]
         },
         account = {},
         uuidCounter = 0,
@@ -137,9 +145,15 @@
                 refreshTransactionsList();
             }
 
+            updateCurrentBalance();
+
 
             $('.js-clear-transaction').click(function (evt) {
                 clearTransactionInput();
+            });
+
+            $('.js-breadcrumb-accounts').click(function () {
+                initTabAccounts();
             });
 
 
@@ -171,6 +185,8 @@
 
                 refreshTransactionsList();
 
+                updateCurrentBalance();
+
                 clearTransactionInput();
 
             });
@@ -200,6 +216,10 @@
                 template = document.getElementById('accounts-panel-input-2__transactions-edit-template').innerHTML.replace(/<%/g, '{{').replace(/%>/g, '}}'),
                 output = Mustache.render(template, transaction),
                 loop;
+
+            if ($('.accounts-panel-edit-transaction').length > 0) {
+                return; // early return
+            }
 
             $(linkTarget).parents('tr').after("<tr class=\"accounts-panel-edit-transaction\" data-uuid=\"" + uuid + "\"><td colspan=\"5\">" + output + "</td></tr>");
             $('.accounts-panel-edit-transaction .accounts-panel').addClass('open');
@@ -303,7 +323,7 @@
 
             $('.accounts-table-listing').html(output);
 
-            $('.accounts-panel-default-header').addClass('open');
+            $('.accounts-panel-listing-header').addClass('open');
             $('.accounts-panel-add').addClass('open');
             $('.accounts-panel-listing').addClass('open');
 
@@ -404,6 +424,19 @@
             uuid = s.join('');
 
             return uuid;
+
+        },
+        updateCurrentBalance = function updateCurrentBalance() {
+            var balance = parseFloat(account.openingBalance),
+                loop;
+
+            if (account.transactions) {
+                for (loop = 0; loop < account.transactions.length; loop++) {
+                    balance = balance + parseFloat(account.transactions[loop].amount);
+                }
+            }
+
+            $('.js-current-balance').html('£' + balance.toFixed(2));
 
         };
 

@@ -50,43 +50,54 @@
 
                 <h2>Overview</h2>
 
-                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
-                    elit id tortor.</p>
+                <div class="visuallyhidden">
 
-                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
-                    elit id tortor.</p>
+                    <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis
+                        lacus
+                        elit id tortor.</p>
 
-                <h3>Contacts</h3>
+                    <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis
+                        lacus
+                        elit id tortor.</p>
 
-                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
-                    elit id tortor.</p>
+                    <h3>Contacts</h3>
 
-                <h3>Decisions</h3>
+                    <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis
+                        lacus
+                        elit id tortor.</p>
 
-                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
-                    elit id tortor.</p>
+                    <h3>Decisions</h3>
 
-                <h3>Accounts</h3>
+                    <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis
+                        lacus
+                        elit id tortor.</p>
 
-                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
-                    elit id tortor.</p>
+                    <h3>Accounts</h3>
 
-                <h3>Assets</h3>
+                    <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis
+                        lacus
+                        elit id tortor.</p>
 
-                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
-                    elit id tortor.</p>
+                    <h3>Assets</h3>
 
-                <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis lacus
-                    elit id tortor.</p>
+                    <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis
+                        lacus
+                        elit id tortor.</p>
 
-                <h2>Help topics</h2>
+                    <p>Suspendisse faucibus, nunc et pellentesque egestas, lacus ante convallis tellus, vitae iaculis
+                        lacus
+                        elit id tortor.</p>
 
-                <ul>
-                    <li>Topic 1</li>
-                    <li>Topic 2</li>
-                    <li>Topic 3</li>
-                    <li>Topic 4</li>
-                </ul>
+                    <h2>Help topics</h2>
+
+                    <ul>
+                        <li>Topic 1</li>
+                        <li>Topic 2</li>
+                        <li>Topic 3</li>
+                        <li>Topic 4</li>
+                    </ul>
+
+                </div>
 
             </div>
 
@@ -111,13 +122,26 @@
 
                 <div class="accounts-panel accounts-panel-input accounts-panel-default-header">
                     <h2>Accounts</h2>
+                    <br/>
 
-                    <p>Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula
-                        urna in
-                        dolor. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Praesent congue erat at
-                        massa.</p>
+                    <p>Add the main account you use for the client’s finances. This is usually called the deputy
+                        account. This is the account you use for regular financial transactions taken on behalf of the
+                        client.</p>
+
+                    <p>! Do not add details of savings accounts unless there are very regular transactions. Add these
+                        in the assets section.</p>
 
                 </div>
+
+                <div class="accounts-panel accounts-panel-input accounts-panel-listing-header">
+                    <h2>Accounts</h2>
+                    <br/>
+
+                    <p>Manage your accounts here. You can add an account below. You can also view, edit and delete an
+                        account.</p>
+
+                </div>
+
 
                 <div class="accounts-panel accounts-panel-add">
                     <input class="button button-secondary" name="commit" type="button" value="Add an account">
@@ -186,6 +210,7 @@
 
 <script id="accounts-panel-input-2__transactions-edit-template" type="text/x-handlebars-template">
     <div class="accounts-panel accounts-panel-input-2__entry-form">
+        <h3 class="form-title">Edit line item</h3>
         <table class="nolines">
             <tr>
                 <td>
@@ -293,16 +318,37 @@
 
     </div>
 
-<details>
-    <summary></summary>
-</details>    <div class="accounts-panel-input-2__opening-balance">
-        Opening Balance
+
+    <div class="accounts-panel-input-2__opening-balance">
+        <details>
+            <summary>
+                Opening Balance
+            </summary>
+
+            <div class="grid-row content">
+                <div class="column-half">&nbsp;
+                </div>
+
+                <div class="column-half">
+                    <div class="report-meta-data accounts-panel-input-2__details">
+                        <span class="report-meta__label">Total amount:</span>
+                        <span class="report-meta__data">£ <%openingBalance%></span>
+                    </div>
+                    <div class="report-meta-data accounts-panel-input-2__details">
+                        <span class="report-meta__label">Start date:</span>
+                        <span class="report-meta__data"><%dateDay%>/<%dateMonth%>/<%dateYear%></span>
+                    </div>
+                </div>
+            </div>
+
+        </details>
     </div>
     <h3 class="form-title accounts-panel-input-2__money-title">Money in and money out</h3>
 
-    <p class="accounts-panel-input-2__money-desc">Phasellus blandit leo ut odio. Nulla facilisi. Aliquam lorem ante,
-        dapibus in, viverra quis, feugiat a, tellus. Pellentesque habitant morbi tristique senectus et netus et
-        malesuada fames ac turpis egestas. Praesent adipiscing.</p>
+    <p class="accounts-panel-input-2__money-desc">Enter all money that comes in and out of this account during the
+        reporting period. For example, transfers, cash withdrawals and deposits, interest,
+        payments from the Department of Work and Pensions, direct debits and refunds. We suggest that you add relevant
+        items every month when you receive your bank statement.</p>
 
     <div class="accounts-panel-input-2__entry-form">
         <table class="nolines">
@@ -385,7 +431,7 @@
     </div>
 
     <div class="accounts-panel-input-2__current-balance">
-        Current balance <span class="js-current-balance"></span>
+        Current balance <span class="js-current-balance current-balance"></span>
     </div>
 
     <table class="nolines accounts-panel-input-2__transactions">
@@ -431,7 +477,7 @@
     <fieldset>
         <legend class="visuallyhidden">account details</legend>
         <div class="form-group">
-            <label for="account_bank_name" class="form-label">Please enter the Bank/Building Society name
+            <label for="account_bank_name" class="form-label">Enter the Bank or Building Society name
                 <span class="validation-message"></span>
             </label>
             <input id="account_bank_name" name="account_bank_name" type="text" class="form-control"
@@ -487,6 +533,9 @@
         </div>
 
         <h3 class="form-title">Add the opening balance on your account</h3>
+
+        <p>Take the first date of your reporting period (see top of page) and add here. Check on your bank statement for
+            the opening balance of the account on that date.</p>
 
         <div class="form-group">
 
